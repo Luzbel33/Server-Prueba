@@ -1,20 +1,21 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+const path = require('path');
 const port = 3000;
+const usersController = require('./controllers/UsersController');
 
-app.listen(port, () =>
-    console.log(`Server running on port ${port}`)
-);
+app.set('view engine','ejs');
 
-app.get('/', (req, res) => 
-    res.sendFile(path.join(__dirname, 'views/index.html'))
+app.use(express.static(path.join(__dirname, 'public')));
+
+    app.get('/', (req, res) =>
+    res.render(path.join(__dirname, 'views/index.ejs'))
     );
 
-    app.get('/productos', (req, res) => 
-    res.sendFile(path.join(__dirname, 'views/productos.html'))
-    );
+    app.get('/users', usersController.usersView)
+    
+    app.get('/user/:id', usersController.userView)
 
-    app.get('/productos/1', (req, res) => 
-    res.sendFile(path.join(__dirname, 'views/productos2.html'))
-    );
+    app.listen(port, () => {
+        console.log('listening on port ${port}');
+    });

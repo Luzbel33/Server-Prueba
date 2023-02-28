@@ -1,0 +1,25 @@
+{
+    "users": [ 
+        {
+            "id": 1,
+            "nombre": "Juan",
+            "apellido": "Gomez",
+            "edad": 20,
+            "email": "juan@gmail.com"
+        },
+        {
+            "id": 2,
+            "nombre": "Gatsu",
+            "apellido": "Kimura",
+            "edad": 25,
+            "email": "kimura_gatsu@gmail.com"
+        },
+        {
+            "id": 3,
+            "nombre": "Luz",
+            "apellido": "Hifer",
+            "edad": 30,
+            "email": "99feriluz@gmail.com"
+        }
+    ]
+}

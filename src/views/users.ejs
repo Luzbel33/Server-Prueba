@@ -1,0 +1,13 @@
+<a href="/">Regresar a Home</a>
+<div>
+    <h1>Users</h1>
+    <ul>
+        <% users.forEach(function(user) { %>
+            <li>
+                <artticle>
+                    <h3> <a href="/user/<%= user.id %>"> <%= user.nombre + ' ' + user.apellido %> </a> </h3>
+                </artticle>
+            </li>
+        <% }); %>
+    </ul>
+</div>

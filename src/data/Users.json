@@ -1,5 +1,5 @@
 {
-    "users": [ 
+    "user": [ 
         {
             "id": 1,
             "nombre": "Juan",
@@ -18,7 +18,7 @@
             "id": 3,
             "nombre": "Luz",
             "apellido": "Hifer",
-            "edad": 30,
+            "edad": 33,
             "email": "99feriluz@gmail.com"
         }
     ]

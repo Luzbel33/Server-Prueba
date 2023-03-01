@@ -1,21 +1,17 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const port = 3000;
-const usersController = require('./controllers/UsersController');
+const routes = require('./routes/index');
+const bodyParser = require('body-parser');
+
+const app = express();
 
 app.set('view engine','ejs');
-
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-    app.get('/', (req, res) =>
-    res.render(path.join(__dirname, 'views/index.ejs'))
-    );
+routes(app);
 
-    app.get('/users', usersController.usersView)
-    
-    app.get('/user/:id', usersController.userView)
-
-    app.listen(port, () => {
-        console.log('listening on port ${port}');
-    });
+app.listen(port, () => {
+    console.log('listening on port ${port}');
+});

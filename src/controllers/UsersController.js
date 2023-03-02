@@ -26,6 +26,7 @@ const addUserView = (req, res) => {
 
 const addUser = (req, res) => { 
     console.log(req.body)
+    
     res.render(path.join(__dirname, '../views/users/addUser.ejs'));
 }
 
